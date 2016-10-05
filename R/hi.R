@@ -8,19 +8,28 @@
 #'
 #' @param who character(1) The name of the person you wish to start a conversation with.
 #'
+#' @param how character(1) How to greet the conversant. Either 'shout' (default) or 'whisper'
+#'
 #' @return character(1) A line of text to be used when starting conversations.
 #'
-#' @examples hi("Martin Morgan")
+#' @examples
+#' hi("Martin Morgan")
+#' hi("Martin Morgan", "whisper")
 #'
 #' @export
-hi <- function(who) {
+hi <- function(who, how = c("shout", "whisper")) {
     stopifnot(is.character(who),
               length(who) == 1,
               !is.na(who)
               )
-    paste("Hello", shout(who), "you have", nchar(who), "letters in your name!")
+    fun <- switch(match.arg(how), shout = shout, whisper = whisper)
+    paste("Hello", fun(who), "you have", nchar(who), "letters in your name!")
 }
 
 shout <- function(who){
     toupper(who)
+}
+
+whisper <- function(who){
+    tolower(who)
 }
