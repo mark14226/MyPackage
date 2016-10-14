@@ -1,6 +1,6 @@
 Package: MyPackage
-Title: Implements useful utilities for my personal use.
-Version: 0.2.0
+Title: Implements useful utilities for my personal use
+Version: 0.2.1
 Authors@R: person("Mark", "Long",
     email = "mark.long@roswellpark.org",
     role = c("aut", "cre"))
@@ -9,6 +9,11 @@ Description: This is an amazing package that I've invested a really large
     different from all other ideas that have gone before.
 Depends:
     R (>= 3.3.0)
+Imports:
+    SummarizedExperiment,
+    dplyr,
+    magrittr,
+    reshape2
 License: Artistic-2.0
 Encoding: UTF-8
 LazyData: true
