@@ -17,6 +17,9 @@
 #' @export
 
 input_rich <- function(pdata_file, exprs_file){
+    stopifnot(is_scalar_character(pdata_file))
+    stopifnot(is_scalar_character(exprs_file))
+
     pdata <- read.csv(pdata_file, header = TRUE, row.names = 1, check.names = FALSE)
     exprs <- read.csv(exprs_file, header = TRUE, row.names = 1, check.names = FALSE)
 
