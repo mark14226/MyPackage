@@ -1,6 +1,6 @@
 Package: MyPackage
 Title: Implements useful utilities for my personal use
-Version: 0.2.5
+Version: 0.3.0
 Authors@R: person("Mark", "Long",
     email = "mark.long@roswellpark.org",
     role = c("aut", "cre"))
